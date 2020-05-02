@@ -344,10 +344,10 @@ class NetEase(object):
             discard=False,
             comment=None,
             comment_url=None,
-            rest=None,
+            rest={},
         )
 
-    def request(self, method, path, params={}, default={"code": -1}, custom_cookies={}):
+    def request(self, method, path, params={}, default={"code": -1}, custom_cookies={'os':'pc'}):
         endpoint = "{}{}".format(BASE_URL, path)
         csrf_token = ""
         for cookie in self.session.cookies:
